@@ -2,6 +2,7 @@
 
 class Core {
   public function start($urlGet){
-    var_dump($urlGet);
+    $controller = $urlGet['pagina'];
+    // verificar qual controller chamar
   }
 }
