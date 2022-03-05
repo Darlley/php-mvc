@@ -2,7 +2,8 @@
 
 class Core {
   public function start($urlGet){
-    $controller = $urlGet['pagina'];
+    $controller = ucfirst($urlGet['pagina'])."Controller"; // NomeController
+    echo $controller;
     // verificar qual controller chamar
   }
 }
