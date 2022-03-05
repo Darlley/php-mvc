@@ -2,6 +2,7 @@
 
   require_once('app/core/index.php');
   require_once('app/controller/HomeController.php');
+  require_once('app/controller/ErrorController.php');
 
   $indexTemplate = file_get_contents('app/index.html');
 
