@@ -4,7 +4,15 @@
   class Core {
     public function start($urlGet){
 
-      $controller = ucfirst($urlGet['pagina'])."Controller"; // NomeController
+      if(isset($urlGet['pagina'])){
+        $controller = ucfirst($urlGet['pagina'])."Controller"; // NomeController
+      } else{
+        if($urlGet){
+          $controller = "ErrorController";
+        }else{
+          $controller = "HomeController";
+        }
+      }
 
       $MethodController = "index";
       
