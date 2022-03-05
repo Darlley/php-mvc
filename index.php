@@ -6,7 +6,12 @@
 
   $indexTemplate = file_get_contents('app/index.html');
 
-  $core = new Core;
-  $core->start($_GET); // query strings x url amigáveis)
-
+  ob_start();
+    $core = new Core;
+    $core->start($_GET); // query strings x url amigáveis)
+    $saida = ob_get_contents();
+    
+    ob_end_clean();
+    
+  $indexTemplate = str_replace('{{ dinamic_content }}', $saida, $indexTemplate);
   echo $indexTemplate;

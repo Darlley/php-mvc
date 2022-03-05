@@ -2,6 +2,6 @@
 
   class HomeController {
     public function index(){
-      echo 'Home';
+      echo file_get_contents('app/pages/home.html');
     }
   }
